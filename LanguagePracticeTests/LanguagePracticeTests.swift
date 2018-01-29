@@ -21,16 +21,30 @@ class LanguagePracticeTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    // MARK: - Language
+    
+    internal func testEnglishLanguage() {
+        let englishMessage = "Hello, my name is Lukas and I love soccer!"
+        XCTAssertEqual(.English, Language(for: englishMessage),
+                       "Did not convert message to English language.")
     }
     
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    internal func testGermanLanguage() {
+        let germanMessage = "Hallo, ich heiße Lukas und ich liebe Fußball!"
+        XCTAssertEqual(.German, Language(for: germanMessage),
+                       "Did not convert message to German language.")
     }
     
+    internal func testSpanishLanguage() {
+        let spanishMessage = "Hola, me llamo Lukas y me encanta el fútbol!"
+        XCTAssertEqual(.Spanish, Language(for: spanishMessage),
+                       "Did not convert message to Spanish language.")
+    }
+    
+    internal func testNotSupportedLanguage() {
+        let notSupportedMessage = "Cześć, jestem Lukas i uwielbiam piłkę nożną"
+        XCTAssertEqual(.NotSupported, Language(for: notSupportedMessage),
+                       "Did not acknowledge not supported language.")
+    }
+
 }
