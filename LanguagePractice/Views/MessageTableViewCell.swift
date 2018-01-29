@@ -32,30 +32,51 @@ class MessageTableViewCell: UITableViewCell {
         fatalError("No storyboards or nibs allowed in this app.")
     }
     
+    // MARK: - Sub views
+    
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        if let messageTextLabel = messageTextLabel {
-            // Label spans content view for automatic dimensions in table view.
-            let margins = contentView.layoutMarginsGuide
-            messageTextLabel.topAnchor.constraint(equalTo: margins.topAnchor).isActive = true
-            messageTextLabel.bottomAnchor.constraint(equalTo: margins.bottomAnchor).isActive = true
+        layoutMessageTextLabel()
+        styleMessageTextLabel()
+    }
+    
+    fileprivate func layoutMessageTextLabel() {
+        guard let messageTextLabel = messageTextLabel else {
+            debugPrint("Message text label not initialized before adding constraints.")
+            return
+        }
+        
+        // Label spans part of content view for automatic dimensions in table view.
+        let margins = contentView.layoutMarginsGuide
+        let messagePadding = contentView.frame.width * 0.15
+        messageTextLabel.topAnchor.constraint(equalTo: margins.topAnchor).isActive = true
+        messageTextLabel.bottomAnchor.constraint(equalTo: margins.bottomAnchor).isActive = true
+
+        switch messageSender {
+        case .chatBot:
+            messageTextLabel.rightAnchor.constraint(lessThanOrEqualTo: margins.rightAnchor, constant: -messagePadding).isActive = true
+            messageTextLabel.leadingAnchor.constraint(equalTo: margins.leadingAnchor).isActive = true
+        case .currentUser:
+            messageTextLabel.rightAnchor.constraint(equalTo: margins.rightAnchor).isActive = true
+            messageTextLabel.leadingAnchor.constraint(equalTo: margins.leadingAnchor, constant: messagePadding).isActive = true
+        }
+    }
+    
+    fileprivate func styleMessageTextLabel() {
+        guard let messageTextLabel = messageTextLabel else {
+            debugPrint("Message text label not initialized before styling.")
+            return
+        }
+        
+        switch messageSender {
+        case .chatBot:
+            messageTextLabel.backgroundColor = .cyan
+            messageTextLabel.textAlignment = .left
+        case .currentUser:
+            messageTextLabel.backgroundColor = .lightGray
+            messageTextLabel.textAlignment = .right
             
-            let messagePadding = contentView.frame.width * 0.15
-            // Style base on sender.
-            switch messageSender {
-            case .chatBot:
-                messageTextLabel.backgroundColor = .cyan
-                messageTextLabel.textAlignment = .left
-                messageTextLabel.rightAnchor.constraint(lessThanOrEqualTo: margins.rightAnchor, constant: -messagePadding).isActive = true
-                messageTextLabel.leadingAnchor.constraint(equalTo: margins.leadingAnchor).isActive = true
-            case .currentUser:
-                messageTextLabel.backgroundColor = .lightGray
-                messageTextLabel.textAlignment = .right
-                messageTextLabel.rightAnchor.constraint(equalTo: margins.rightAnchor).isActive = true
-                messageTextLabel.leadingAnchor.constraint(equalTo: margins.leadingAnchor, constant: messagePadding).isActive = true
-                
-            }
         }
     }
 }

@@ -47,7 +47,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         if let tableView = tableView {
             tableView.dataSource = self
             tableView.delegate = self
-            tableView.backgroundColor = .black
+            tableView.backgroundColor = .white
             tableView.separatorStyle = .none
             
             tableView.rowHeight = UITableViewAutomaticDimension
