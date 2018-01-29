@@ -13,6 +13,13 @@ struct Message {
     internal let createdAt: Date
     internal let sender: MessageSender
     internal let text: String
+    
+    init(text messageText: String, from messageSender: MessageSender) {
+        language = Language(for: messageText)
+        createdAt = Date()
+        sender = messageSender
+        text = messageText
+    }
 }
 
 enum MessageSender {

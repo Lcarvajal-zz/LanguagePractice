@@ -10,14 +10,18 @@ import XCTest
 @testable import LanguagePractice
 
 class LanguagePracticeTests: XCTestCase {
+    private var messageManager: MessageManager?
     
     override func setUp() {
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        
+        messageManager = MessageManager()
+        XCTAssertNotNil(messageManager, "Not able to initialize message manager object.")
     }
     
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        messageManager = nil
+
         super.tearDown()
     }
     
@@ -50,7 +54,29 @@ class LanguagePracticeTests: XCTestCase {
     // MARK: - Message Manager
     
     internal func testMessageInputException() {
-        
+        if let manager = messageManager {
+            
+            // Nil input.
+            XCTAssertThrowsError(try manager.sendMessage(withText: nil)) { (error) in
+                debugPrint(error.localizedDescription)
+            }
+            
+            // No characters.
+            XCTAssertThrowsError(try manager.sendMessage(withText: "")) { (error) in
+                debugPrint(error.localizedDescription)
+            }
+            
+            // Only whitespace and new lines.
+            XCTAssertThrowsError(try manager.sendMessage(withText: "  \n    ")) { (error) in
+                debugPrint(error.localizedDescription)
+            }
+            
+            // Greater than 70 characters.
+            let giantText = String(repeating: "A", count: 71)
+            XCTAssertThrowsError(try manager.sendMessage(withText: giantText)) { (error) in
+                debugPrint(error.localizedDescription)
+            }
+        }
     }
     
 }
