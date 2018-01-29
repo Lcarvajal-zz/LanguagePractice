@@ -27,25 +27,25 @@ class LanguagePracticeTests: XCTestCase {
     
     // MARK: - Language
     
-    internal func testEnglishLanguage() {
+    private func testEnglishLanguage() {
         let englishMessage = "Hello, my name is Lukas and I love soccer!"
         XCTAssertEqual(.english, Language(for: englishMessage),
                        "Did not convert message to English language.")
     }
     
-    internal func testGermanLanguage() {
+    private func testGermanLanguage() {
         let germanMessage = "Hallo, ich heiße Lukas und ich liebe Fußball!"
         XCTAssertEqual(.german, Language(for: germanMessage),
                        "Did not convert message to German language.")
     }
     
-    internal func testSpanishLanguage() {
+    private func testSpanishLanguage() {
         let spanishMessage = "Hola, me llamo Lukas y me encanta el fútbol!"
         XCTAssertEqual(.spanish, Language(for: spanishMessage),
                        "Did not convert message to Spanish language.")
     }
     
-    internal func testNotSupportedLanguage() {
+    private func testNotSupportedLanguage() {
         let notSupportedMessage = "Cześć, jestem Lukas i uwielbiam piłkę nożną"
         XCTAssertEqual(.notSupported, Language(for: notSupportedMessage),
                        "Did not acknowledge not supported language.")
@@ -53,7 +53,7 @@ class LanguagePracticeTests: XCTestCase {
     
     // MARK: - Message Manager
     
-    internal func testMessageInputException() {
+    private func testMessageInputException() {
         if let manager = messageManager {
             
             // Nil input.
@@ -78,5 +78,7 @@ class LanguagePracticeTests: XCTestCase {
             }
         }
     }
+    
+    
     
 }
