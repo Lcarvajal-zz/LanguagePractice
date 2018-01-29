@@ -10,6 +10,12 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    override func loadView() {
+        super.loadView()
+        view.backgroundColor = .white
+        navigationItem.title = "Language Practice"
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
