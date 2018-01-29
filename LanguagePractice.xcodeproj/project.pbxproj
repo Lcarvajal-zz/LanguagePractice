@@ -17,6 +17,7 @@
 		80A1F47A201FA1AD00013B52 /* MessageInputError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A1F479201FA1AD00013B52 /* MessageInputError.swift */; };
 		80A1F47C201FA52A00013B52 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A1F47B201FA52A00013B52 /* Message.swift */; };
 		80A1F47F201FA5DC00013B52 /* MessageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A1F47E201FA5DC00013B52 /* MessageManager.swift */; };
+		80A1F481201FB18F00013B52 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A1F449201F7A0500013B52 /* ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				80A1F476201F80FD00013B52 /* Models */,
+				80A1F482201FB28300013B52 /* Views */,
 				80A1F447201F7A0500013B52 /* AppDelegate.swift */,
 				80A1F449201F7A0500013B52 /* ViewController.swift */,
 				80A1F44E201F7A0500013B52 /* Assets.xcassets */,
@@ -142,6 +144,13 @@
 				80A1F47E201FA5DC00013B52 /* MessageManager.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		80A1F482201FB28300013B52 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -298,6 +307,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				80A1F481201FB18F00013B52 /* ViewController.swift in Sources */,
 				80A1F468201F7A0500013B52 /* LanguagePracticeUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
