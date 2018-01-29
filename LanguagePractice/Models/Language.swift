@@ -9,23 +9,23 @@
 import Foundation
 
 enum Language {
-    case English
-    case German
-    case Spanish
-    case NotSupported
+    case english
+    case german
+    case spanish
+    case notSupported
     
     init(for textToInterpret: String) {
         if let languageTag = NSLinguisticTagger.dominantLanguage(for: textToInterpret) {
             switch languageTag {
-            case "en": self = .English
-            case "de": self = .German
-            case "es": self = .Spanish
-            default: self = .NotSupported
+            case "en": self = .english
+            case "de": self = .german
+            case "es": self = .spanish
+            default: self = .notSupported
             }
         }
         else {
             debugPrint("Nil value used to initialize Language Enum.")
-            self = .NotSupported
+            self = .notSupported
         }
     }
 }

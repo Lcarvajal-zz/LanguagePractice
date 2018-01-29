@@ -25,25 +25,25 @@ class LanguagePracticeTests: XCTestCase {
     
     internal func testEnglishLanguage() {
         let englishMessage = "Hello, my name is Lukas and I love soccer!"
-        XCTAssertEqual(.English, Language(for: englishMessage),
+        XCTAssertEqual(.english, Language(for: englishMessage),
                        "Did not convert message to English language.")
     }
     
     internal func testGermanLanguage() {
         let germanMessage = "Hallo, ich heiße Lukas und ich liebe Fußball!"
-        XCTAssertEqual(.German, Language(for: germanMessage),
+        XCTAssertEqual(.german, Language(for: germanMessage),
                        "Did not convert message to German language.")
     }
     
     internal func testSpanishLanguage() {
         let spanishMessage = "Hola, me llamo Lukas y me encanta el fútbol!"
-        XCTAssertEqual(.Spanish, Language(for: spanishMessage),
+        XCTAssertEqual(.spanish, Language(for: spanishMessage),
                        "Did not convert message to Spanish language.")
     }
     
     internal func testNotSupportedLanguage() {
         let notSupportedMessage = "Cześć, jestem Lukas i uwielbiam piłkę nożną"
-        XCTAssertEqual(.NotSupported, Language(for: notSupportedMessage),
+        XCTAssertEqual(.notSupported, Language(for: notSupportedMessage),
                        "Did not acknowledge not supported language.")
     }
     
