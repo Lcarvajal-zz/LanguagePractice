@@ -15,6 +15,7 @@
 		80A1F468201F7A0500013B52 /* LanguagePracticeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A1F467201F7A0500013B52 /* LanguagePracticeUITests.swift */; };
 		80A1F478201F81BE00013B52 /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A1F477201F81BE00013B52 /* Language.swift */; };
 		80A1F47A201FA1AD00013B52 /* MessageInputError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A1F479201FA1AD00013B52 /* MessageInputError.swift */; };
+		80A1F47C201FA52A00013B52 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A1F47B201FA52A00013B52 /* Message.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		80A1F475201F7ABC00013B52 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		80A1F477201F81BE00013B52 /* Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
 		80A1F479201FA1AD00013B52 /* MessageInputError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageInputError.swift; sourceTree = "<group>"; };
+		80A1F47B201FA52A00013B52 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				80A1F477201F81BE00013B52 /* Language.swift */,
+				80A1F47B201FA52A00013B52 /* Message.swift */,
 				80A1F479201FA1AD00013B52 /* MessageInputError.swift */,
 			);
 			path = Models;
@@ -273,6 +276,7 @@
 			files = (
 				80A1F47A201FA1AD00013B52 /* MessageInputError.swift in Sources */,
 				80A1F44A201F7A0500013B52 /* ViewController.swift in Sources */,
+				80A1F47C201FA52A00013B52 /* Message.swift in Sources */,
 				80A1F478201F81BE00013B52 /* Language.swift in Sources */,
 				80A1F448201F7A0500013B52 /* AppDelegate.swift in Sources */,
 			);
