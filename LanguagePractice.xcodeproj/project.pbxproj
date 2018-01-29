@@ -18,6 +18,7 @@
 		80A1F47C201FA52A00013B52 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A1F47B201FA52A00013B52 /* Message.swift */; };
 		80A1F47F201FA5DC00013B52 /* MessageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A1F47E201FA5DC00013B52 /* MessageManager.swift */; };
 		80A1F481201FB18F00013B52 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A1F449201F7A0500013B52 /* ViewController.swift */; };
+		80A1F484201FBC5400013B52 /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A1F483201FBC5400013B52 /* MessageTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		80A1F479201FA1AD00013B52 /* MessageInputError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageInputError.swift; sourceTree = "<group>"; };
 		80A1F47B201FA52A00013B52 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		80A1F47E201FA5DC00013B52 /* MessageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageManager.swift; sourceTree = "<group>"; };
+		80A1F483201FBC5400013B52 /* MessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +151,7 @@
 		80A1F482201FB28300013B52 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				80A1F483201FBC5400013B52 /* MessageTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -286,6 +289,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				80A1F484201FBC5400013B52 /* MessageTableViewCell.swift in Sources */,
 				80A1F47A201FA1AD00013B52 /* MessageInputError.swift in Sources */,
 				80A1F44A201F7A0500013B52 /* ViewController.swift in Sources */,
 				80A1F47C201FA52A00013B52 /* Message.swift in Sources */,

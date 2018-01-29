@@ -48,6 +48,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             tableView.dataSource = self
             tableView.delegate = self
             tableView.backgroundColor = .black
+            tableView.separatorStyle = .none
+            
+            tableView.rowHeight = UITableViewAutomaticDimension
+            tableView.estimatedRowHeight = UITableViewAutomaticDimension
+            tableView.register(MessageTableViewCell.self, forCellReuseIdentifier: MessageTableViewCell.reuseIdentifier)
             tableView.tableFooterView = UIView(frame: .zero)
             
             view.addSubview(tableView)
@@ -78,13 +83,26 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     // MARK: - Table view data source
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return dataManager.messages.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        // FIXME: - Not implemented
-        let cell = UITableViewCell()
-        return cell
+        if let messageCell = tableView.dequeueReusableCell(withIdentifier: MessageTableViewCell.reuseIdentifier, for: indexPath) as? MessageTableViewCell {
+            
+            let message = dataManager.messages[indexPath.row]
+            messageCell.messageSender = message.sender
+            messageCell.messageTextLabel?.text = message.text
+            messageCell.layoutIfNeeded()
+            return messageCell
+        }
+        else {
+            debugPrint("Cell with matching reuse identifier not called.")
+            return UITableViewCell(frame: .zero)
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
     }
 }
 
