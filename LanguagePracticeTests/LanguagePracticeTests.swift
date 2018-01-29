@@ -46,5 +46,11 @@ class LanguagePracticeTests: XCTestCase {
         XCTAssertEqual(.NotSupported, Language(for: notSupportedMessage),
                        "Did not acknowledge not supported language.")
     }
-
+    
+    // MARK: - Message Manager
+    
+    internal func testMessageInputException() {
+        
+    }
+    
 }
